@@ -64,4 +64,3 @@ FreshCheck is a modern, user-friendly web application designed to instantly clas
 *   `ModelTraining/`: Jupyter notebooks used for training the model.
 
 ---
-*Created for the Fruit Freshness Classification Project.*
