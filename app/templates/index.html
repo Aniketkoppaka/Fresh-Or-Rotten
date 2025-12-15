@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshCheck - Fruit Freshness Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+    <!-- Particles removed -->
+
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-leaf"></i> FreshCheck
+        </div>
+        <div class="nav-links">
+            <!-- Links removed -->
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="hero-section">
+            <div class="hero-text">
+                <h1>Eat Fresh,<br>Live Healthy</h1>
+                <p>Instantly check if your fruits are fresh or rotten with our AI-powered classifier. Supports Peaches,
+                    Pomegranates, and Strawberries.</p>
+                <button class="cta-button" onclick="document.getElementById('file-input').click()">Check Now</button>
+            </div>
+            <div class="hero-image" data-tilt data-tilt-glare data-tilt-max-glare="0.5">
+                <!-- We'll clearer visuals via CSS or an illustration later if needed, for now a placeholder graphic or css shape -->
+                <div class="circle-bg"></div>
+                <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                    alt="Fresh Fruit" class="fruit-hero">
+            </div>
+        </div>
+
+        <!-- Fruit Facts Section Removed -->
+
+        <div class="upload-section" id="upload-area">
+            <div class="upload-box" data-tilt data-tilt-glare data-tilt-max-glare="0.2" data-tilt-scale="1.02">
+                <input type="file" id="file-input" accept="image/*" hidden>
+                <div class="upload-content" id="drop-zone">
+                    <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                    <h3>Drag & Drop or Click to Upload</h3>
+                    <p>Supports JPG, PNG, JPEG</p>
+                </div>
+                <div class="preview-container" id="preview-container" style="display: none;">
+                    <img id="image-preview" src="" alt="Preview">
+                    <div class="loading-overlay" id="loading-overlay">
+                        <div class="spinner"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-card" id="result-card">
+                <div class="result-icon" id="result-icon"></div>
+                <h2 id="result-title">Analyzing...</h2>
+                <div class="confidence-bar-container">
+                    <div class="confidence-bar" id="confidence-bar"></div>
+                </div>
+                <p id="result-message">Upload an image to start</p>
+                <button class="reset-button" id="reset-button">Analyze Another</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

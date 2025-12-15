@@ -1,0 +1,347 @@
+:root {
+    --primary-color: #66BB6A;
+    /* Fresh Green */
+    --secondary-color: #FF7043;
+    /* Warm Orange/Peach */
+    --danger-color: #EF5350;
+    /* Rotten Red */
+    --text-dark: #333;
+    --text-light: #666;
+    --bg-light: #F9F9F9;
+    --card-bg: #FFFFFF;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    /* Particles removed */
+}
+
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background: transparent;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    margin-left: 2rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Container */
+.container {
+    padding: 2rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Hero Section */
+/* Hero Section */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+}
+
+/* Facts Section */
+.facts-section {
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+.hero-text p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 450px;
+}
+
+.cta-button {
+    padding: 12px 30px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 5px 15px rgba(102, 187, 106, 0.4);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 187, 106, 0.6);
+}
+
+.hero-image {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-width: 300px;
+}
+
+.circle-bg {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+    border-radius: 50%;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.fruit-hero {
+    max-width: 100%;
+    width: 400px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transform: rotate(-5deg);
+    transition: transform 0.5s;
+}
+
+.fruit-hero:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+/* Facts Section Removed */
+
+/* Upload Section */
+.upload-section {
+    display: flex;
+    gap: 3rem;
+    align-items: stretch;
+    /* Ensure equal height */
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.upload-box {
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
+    /* Fixed matching width */
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    border: 2px dashed #e0e0e0;
+    transition: border-color 0.3s;
+    position: relative;
+    min-height: 400px;
+    /* Fixed matching height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.upload-box:hover {
+    border-color: var(--primary-color);
+}
+
+.upload-icon {
+    font-size: 3rem;
+    color: #bdbdbd;
+    margin-bottom: 1rem;
+}
+
+.preview-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 18px;
+    /* Slightly less than parent */
+    overflow: hidden;
+    background: white;
+}
+
+#image-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    /* Controlled by JS */
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Result Card */
+.result-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
+    /* Matching width */
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    opacity: 0;
+    /* Fully invisible when inactive */
+    pointer-events: none;
+    transition: opacity 0.3s;
+    min-height: 400px;
+    /* Matching height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.result-card.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.result-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    height: 80px;
+}
+
+.confidence-bar-container {
+    width: 100%;
+    height: 10px;
+    background: #eee;
+    border-radius: 5px;
+    margin: 1.5rem 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.confidence-bar {
+    height: 100%;
+    width: 0%;
+    background: var(--primary-color);
+    transition: width 1s ease-out;
+}
+
+.reset-button {
+    margin-top: 2rem;
+    padding: 10px 20px;
+    background: transparent;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--text-light);
+    transition: all 0.3s;
+}
+
+.reset-button:hover {
+    border-color: var(--text-dark);
+    color: var(--text-dark);
+}
+
+/* State Classes */
+.is-fresh {
+    color: var(--primary-color);
+}
+
+.is-rotten {
+    color: var(--danger-color);
+}
+
+.fresh-bg {
+    background-color: var(--primary-color);
+}
+
+.rotten-bg {
+    background-color: var(--danger-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .circle-bg {
+        width: 300px;
+        height: 300px;
+    }
+
+    .fruit-hero {
+        width: 300px;
+    }
+}
